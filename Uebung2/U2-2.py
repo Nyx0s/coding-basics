@@ -6,7 +6,7 @@
 
 """
 
-stringOP = str(input("Wort eingeben: ")).lower()
+stringOP = str(input("Wort eingeben: ")).lower() # Nimmt einen String vom user und verwendelt ihn in kleinbuchstaben
 
-#stringRev = stringOP.__reversed__()
-print(stringOP == stringOP[::-1])
+
+print(stringOP == stringOP[::-1]) # ausgabe Boolian ob "stringOP" der selbe is wenn "stringOP" gespiegelt wird

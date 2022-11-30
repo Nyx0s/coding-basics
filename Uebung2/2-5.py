@@ -1,3 +1,10 @@
+"""
+
+<U2 Bsp. 5>
+<Computer is Guessing Game>
+<Maximilian Jonas, 52203295>
+
+"""
 import random
 
 
@@ -30,13 +37,13 @@ def main():
 
 
         if choice in ["higher", "h"]:
-            compInt = rndInt(start=compInt)
+            compInt = rndInt(start=compInt, ende=uperThresh)
             count +=1
             print(f"computer guess: {compInt}")
             continue
 
         if choice in ["lower", "l"]:
-            compInt = rndInt(ende=compInt)
+            compInt = rndInt(start=lowerThresh,ende=compInt)
             count += 1
             print(f"computer guess: {compInt}")
             continue

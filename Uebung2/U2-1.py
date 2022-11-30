@@ -10,17 +10,12 @@ t = ('P', 'R', 'O', 'G', '1', '_', 'V', 'O') # Tuplen-Liste gefüllt mit Strings
 
 # Aufgabe 1.1 ausgabe des 3. Elements
 
-elementDrei = t[2]  # speichern des 3. Element in Variable "element3"
-
-print(elementDrei) # ausgabe der Variable "element3"
+print(t[2]) # ausgabe des 3 Elements
 
 
 # Aufgabe 1.2 ausgabe des zweitletzte Element ausgeben
 
-
-min2Element = t[-2]  # speichern des vorletzten Element in Variable "min2Element"
-
-print(min2Element) # ausgabe der Variable "min2Element"
+print(t[-2])
 
 
 # Aufgab 1.3 tulpe um sich selbst erweitern und ausgeben
