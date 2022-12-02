@@ -1,5 +1,5 @@
 """
-<U1 Bsp. 1>
+<U1 Bsp. 2>
 <Multiplizierer>
 <Maximilian Jonas, 52203295>
 """

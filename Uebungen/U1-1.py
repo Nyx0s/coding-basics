@@ -1,6 +1,6 @@
 """
 <U1 Bsp. 1>
-<String Bearbeitung>
+<String Manipulation>
 <Maximilian Jonas, 52203295>
 """
 
@@ -10,7 +10,6 @@ text = "PROG VO bis" # gegebener String
 
 firstFour = text[:4] # speichern der ersten 4 Zeichen in firstFour Variable
 
-print(text[:4])
 print(firstFour) # Ausgabe firstFour Variable
 
 ### Teil "VO" ausgeben

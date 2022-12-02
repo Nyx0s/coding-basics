@@ -1,22 +1,28 @@
+"""
+<U1 Bsp. 9>
+<1 -50 Schleife der fibonacci reihe>
+< Algorythmus:
+
+    x = Durchlauf
+    c(x) + n(x) = f(x)
+    n(x) = c(x)
+    c(x) =f(x)
+
+<Maximilian Jonas, 52203295>
+"""
+
+currentInt = 0 # Start der Reihe
+nextInt = 1 # nächster  Integer
 
 
-#endZahl = int(input("Wo soll die Fibonacci Reihe enden? "))
+for _ in range(0, 50):
 
-count = 1
-alteZahl = 0
+    fibInt = nextInt + currentInt
+    print(fibInt)
 
-for zahl in range(0, 50):
+    nextInt = currentInt
+    currentInt = fibInt
 
-    fibonacci = count + zahl
-    print(f"{count} + {zahl} = {fibonacci}")
-
-
-    #fibonacci = count + zahl
-    #print(count)
-    count += fibonacci
-
-    # x + y = z
-    # y + z = x
 
 
 
