@@ -15,7 +15,7 @@ print(hash_alg)
 
 # 1 Klartextpasswort in alg eintragen
 print(passwd, passwd.encode('utf-8'))
-sha1 = hash_alg.update(passwd.encode('utf-8')) # übergibt PW als bites
+sha1 = hash_alg.update(passwd.encode("utf-8")) # übergibt PW als bites
 
 # 2 Hashverfahren gestartet
 print(f"Passwort = {passwd} \nPasswort verschlüsselt = {sha1.hexdigest()}")
