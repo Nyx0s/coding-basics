@@ -2,11 +2,25 @@ import hashlib
 
 def hash_password(passwort):
 
-    hashAlg = hashlib.sha3_256() # Create HashObject for Hashing SHA-256
-    passwort = passwort.encode("utf-8")
+    hashAlg = hashlib.sha3_256(passwort.encode("utf-8")).hexdigest() # Create HashObject for Hashing SHA-256
+    print(f"Hash:\n{hashAlg}")
+    return hashAlg
 
-    sha256 = hashAlg.update(passwort,)
+def check_password(oldHash):
+    testen = str(input("Gib das zu Überprüfende Passwort erneut ein: "))
+    hash_test = hash_password(testen)
 
-    print(sha256    passwort = passwort.encode("utf-8"))
+    if oldHash == hash_test:
+        print("SUCCESS - the entered passwords match")
+        return True
+    else:
+        print("ERROR - the passwords do not match")
+        return False
 
-print(hash_password("Hash"))
+
+def main():
+    firstInput = str(input("Bitte Passwort eingeben: "))
+    hash1 = hash_password(firstInput)
+    check_password(hash1)
+
+main()
