@@ -45,22 +45,22 @@ def compZiehungen(): # Funktion um den Computer Lotto Zahlen wählen zu lassen
 
     ziehungZahlen = [] # Liste mit Lottozahlen des Computers für eine Ziehung
 
-    count = 6
+    count = 6 # Counter für einzelne Zahlen max 6
     while count:
 
-        try:
-            ziehung = random.randint(1,45)
 
-            if ziehung not in ziehungZahlen:
+        ziehung = random.randint(1,45) # Wenn die gegebene Zahl nicht in der Liste "" ist und unter 45 ist füge sie zu Liste "ziehungZahlen" hinzugefügt unde der counter um 1 verringert
+
+        if ziehung not in ziehungZahlen:
                 ziehungZahlen.append(ziehung)
                 count -= 1
 
-        except:
-            pass
 
     return ziehungZahlen
 
-def lottoRechner():
+def lottoRechner(): # Funktion die die Spieler Lottozahlen mit denen vom Computer vergleicht und speichert
+
+    # Mögliche Lotto Combinationen 0-8
     lotto0 = 0
     lotto1 = 0
     lotto2 = 0
@@ -69,20 +69,22 @@ def lottoRechner():
     lotto5 = 0
     lotto6 = 0
 
-    userLotto = userZahlen()
+    userLotto = userZahlen() # Speichern der Spieler Lottozahlen
 
-    durchgänge = int(input("Wie oft soll Lotto gespielt werden"))
+    durchgänge = int(input("Wie oft soll Lotto gespielt werden: "))
 
 
-    for _ in range(1, durchgänge):
-        compLotto = compZiehungen()
+    for _ in range(1, durchgänge): # loop anhand "durchgänge"
 
-        player = set(userLotto)
-        comp = set(compZiehungen())
+        compLotto = compZiehungen() # generiert in jedem durchgang neue Lotto-Zahlen
 
-        foundInt = player.intersection(comp)
-        lotto = len(foundInt)
+        player = set(userLotto) # Erstelle set der UserZahlen um sie mit denen des Computers vergleichen
+        comp = set(compZiehungen()) # Erstelle set der ComputerZahlen um sie mit denen des Users vergleichen
 
+        foundInt = player.intersection(comp) # speichern der ubereinstimmenden Zahlen
+        lotto = len(foundInt) # länge der übereinstimmenden Zahlen in "foundInt"
+
+        # Speiert die einzelnen Lottoo gewinne
         if lotto == 0:
             lotto0 += 1
         elif lotto == 1:
@@ -97,10 +99,8 @@ def lottoRechner():
             lotto5 += 1
         elif lotto == 6:
             lotto6 += 1
-            break
 
-
-    print(f"0-Lotto: {lotto0} , 1-lotto: {lotto1}, 2-lotto: {lotto2}, 3-lotto: {lotto2}, 4-lotto: {lotto4}, 5-lotto: {lotto5}, 6-lotto: {lotto6}")
+    print(f"0-Lotto: {lotto0} , 1-lotto: {lotto1}, 2-lotto: {lotto2}, 3-lotto: {lotto2}, 4-lotto: {lotto4}, 5-lotto: {lotto5}, 6-lotto: {lotto6}") # Ausgebe der LottoTreffer
 
 
 lottoRechner()
