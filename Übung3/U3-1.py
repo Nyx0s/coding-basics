@@ -12,7 +12,7 @@ import time
 
 def genNumber(): # Funtion zum erstellen 6 zufälliger Zahlen (im bereich 1-45) und rückgabe als array
 
-    ziehungZahlen = [] # Liste mit Lottozahlen des Computers für eine Ziehung
+    ziehungZahlen = [] # Liste mit Lottozahlen
 
     count = 6 # Counter für einzelne Zahlen max 6
 
@@ -30,24 +30,25 @@ def genNumber(): # Funtion zum erstellen 6 zufälliger Zahlen (im bereich 1-45) 
 
 def lottoZiehung():
 
-    startZeit = time.time() #
+    startZeit = time.time() # speichern der Startzeit des Programmes
 
-    gewinnZahlen = set(genNumber())
-    count = 0
-    lottoGew = {"lotto0": 0, "lotto1": 0,"lotto2": 0,"lotto3": 0,"lotto4": 0,"lotto5": 0,"lotto6": 0,}
-    zeitVierer = 0
-    zeitFünf = 0
-    zeitSechs = 0
-    # Mögliche Lotto Combinationen 0-
-    print(f"Ihre Gewinnerzahlen: {gewinnZahlen}")
+    gewinnZahlen = set(genNumber()) # speichern der generierten Lottzeiten (Gewinnzahlen)
+    count = 0 # counter für Versusuche
+    lottoGew = {"lotto0": 0, "lotto1": 0,"lotto2": 0,"lotto3": 0,"lotto4": 0,"lotto5": 0,"lotto6": 0,} # Dictionary für 0-6 gleiche Zahlen
+    zeitVierer = 0 # Variable für die Zeit die benötigt wird um 4 übereinstimmente Zahlen zu finden
+    zeitFünf = 0 # Variable für die Zeit die benötigt wird um 5 übereinstimmente Zahlen zu finden
+    zeitSechs = 0 # Variable für die Zeit die benötigt wird um 5 übereinstimmente Zahlen zu finden
+
+    print(f"Ihre Gewinnerzahlen: {gewinnZahlen}") #Ausgabe der Fixen Lottozahlen
 
 
-    while True:
-        guessZahlen = set(genNumber())
-        correctInt = len(gewinnZahlen.intersection(guessZahlen))
+    while True: # Loop der erst endet wenn zumindest 5 Zahlen übereinstimmen
+
+        guessZahlen = set(genNumber()) # Generieren von 6 zufälligen Zahlen im Bereich 1-45
+        correctInt = len(gewinnZahlen.intersection(guessZahlen)) # Vergleich der Gewinnzahl mit der
         count += 1
 
-        # Speiert die einzelnen Lottoo gewinne
+        # Speichert die einzelnen Lottogewinne
         if correctInt == 0:
             lottoGew["lotto0"] += 1
         if correctInt == 1:
@@ -56,16 +57,17 @@ def lottoZiehung():
             lottoGew["lotto2"] += 1
         if correctInt == 3:
             lottoGew["lotto3"] += 1
+
         if correctInt == 4:
             lottoGew["lotto4"] += 1
-            if zeitVierer == False:
-                zeitVierer = round((time.time() - startZeit), 2)
+            if zeitVierer == False: # zeitViere == 0 also False
+                zeitVierer = round((time.time() - startZeit), 2) # speichern der Zeit die benötigt wird 4 übereinstimmende Zahlen zu haben
 
         if correctInt == 5:
             lottoGew["lotto5"] += 1
-            if zeitFünf == False:
+            if zeitFünf == False:  # zeitFünf == 0 also False
                 zeitFünf = round((time.time() - startZeit), 2)
-                break
+                break # beenden des Loops nachdem 5 übereinstimmende Zahlen gefunden wurden
 
 
         if correctInt == 6:
@@ -73,7 +75,7 @@ def lottoZiehung():
             if zeitSechs == False:
                 zeitSechs = round((time.time() - startZeit), 2)
 
-
+    # Ausgabe der Veruche und Zeit die benötigt wird um einen Lotto 4,5,6er zu erhalten
     print(f"Versuche: {count}\nZeit 4er: {zeitVierer}s\nZeit 5er: {zeitFünf}s\nZeit 6er: {zeitSechs}s")
 
 

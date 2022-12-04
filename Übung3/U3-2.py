@@ -1,3 +1,11 @@
+"""
+
+<U3 Bsp. 2>
+<Generieren eines Passwortes das zwischen 10 u. 16. Zeichen Lang ist und mindestens 2 klein Buchstaben 2 Großbuchstaben2 Zahlen und 2 SOnderzeichen besteh>
+<Maximilian Jonas, 52203295>
+
+"""
+# Import Module
 import random
 import  string
 
@@ -19,7 +27,7 @@ while True:
 
 
 random.shuffle(genPassword)
-mypassword ="" .join(genPassword)
+mypassword = "" .join(genPassword)
 
 print(f"Ihr Passwort: {mypassword} mit einer Länge von {len(mypassword)} ZeicheN")
 
