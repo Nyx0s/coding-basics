@@ -1,43 +1,52 @@
+"""
+
+<U3 Bsp. 2>
+<Berechnen des Flächeninhalt und Umfang eines Kreises, Rechtecks und Quadrats>
+<Maximilian Jonas, 52203295>
+
+"""
+# Import Module
 import cmath
-class Kreis:
-    def __init__(self, radius):
+
+class Kreis: # definieren der Klasse Kreis
+
+    def __init__(self, radius): # Konstruieren der Klasse
         self.radius = radius
 
-    def area(self):
+    def fläche(self):
         return cmath.pi * self.radius ** 2
-
-    def circumference(self):
-        return 2 * cmath.pi * self.radius
+    def umfang(self):
+        return cmath.pi * 2 * self.radius
 
 
 class Rechteck:
-    def __init__(self, length, height):
-        self.length = length
-        self.hight = height
 
-    def area(self):
-        return self.length * self.hight
+    def __init__(self, länge, breite):
+        self.länge = länge
+        self.breite = breite
 
-    def circumference(self):
-        return 2 * self.length + 2 * self.hight
-
+    def fläche(self):
+        return self.länge * self.breite
+    def umfang(self):
+        return (self.länge + self.breite) * 2
 
 class Quadrat:
-    def __init__(self, size):
-        self.size = size
 
-    def area(self):
-        return self.size ** 2
+    def __init__(self, länge):
+        self.länge = länge
 
-    def circumference(self):
-        return self.size * 4
+    def fläche(self):
+        return self.länge ** 2
+    def umfang(self):
+        return (self.länge + self.länge) * 2
 
-obj = [
+
+objekte = [
     Kreis(7.1),
     Kreis(4.8),
     Rechteck(3.1, 7.4),
     Quadrat(6)
 ]
 
-for i in obj:
-    print(f'{i.__class__.__name__}:   \tFläche: {i.area():.2f}, Umfang: {i.circumference():.2f}')
+for objekt in objekte:
+    print(f'{objekt.__class__.__name__}:   \tFläche: {objekt.fläche():.2f}, Umfang: {objekt.umfang():.2f}')

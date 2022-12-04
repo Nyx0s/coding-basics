@@ -1,3 +1,14 @@
+"""
+
+<U3 Bsp. 2>
+<Erstellen der Eltern-Klasse Person und 2-Subklassen LehrerIn und SportlerIn. Die SportlerIn klasse bekommt eine Weitere Subklasse Skifahgrer>
+Spezialisierung haben.>
+<Maximilian Jonas, 52203295>
+
+"""
+
+# Import Module
+
 import time
 class IDCard():
 
@@ -19,18 +30,7 @@ class IDCard():
             print(f'Guthaben für {self.name} wurde aufgeladen - aktueller Stand: {self.guthaben:.2f}')
 
     def bookService(self, services, extraServices=0):
-        """Bucht einen Service auf die Karte
 
-            Args:
-                services (int):
-                    0: Tageskarte für Erwachsene (Alter >=18) kostet 25€
-                    1: Tageskarte für Studierende kostet 18€
-                    2: Tageskarte für Kinder kostet 12€
-                extraServices (int):
-                    0: kein extra Service
-                    1: Sauna zubuchbar kostet 5€
-                    2: Private SPA zubuchbar 10€
-        """
         match services:
             case 0:
                 if self.alter <= 18:
