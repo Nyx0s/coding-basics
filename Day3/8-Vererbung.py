@@ -36,3 +36,4 @@ class Mitarbeiter(Abteilungsleitung):
 
 edi = Mitarbeiter(name="edi", beliebtheit=10, geschlecht="m", alter=25, abteilung="Supp")
 eva = Abteilungsleitung(name="eva", beliebtheit=15, abteilung="IT")
+print(edi)

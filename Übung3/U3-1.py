@@ -1,20 +1,28 @@
+"""
+
+<U3 Bsp. 1>
+<Der Computer sucht sich zufällig 6 Zahlen von 1-45 aus (gewinnzahlen) danach versucht er so lange 6 Zahlen zufällig zu generiern bis ein Lotto 4er gefunden wurde.>
+<Maximilian Jonas, 52203295>
+
+"""
+# Importieren der Module
 import random
 import time
 
 
-def genNumber():
+def genNumber(): # Funtion zum erstellen 6 zufälliger Zahlen (im bereich 1-45) und rückgabe als array
 
     ziehungZahlen = [] # Liste mit Lottozahlen des Computers für eine Ziehung
 
     count = 6 # Counter für einzelne Zahlen max 6
+
     while count:
 
-
-        ziehung = random.randint(1,45) # Wenn die gegebene Zahl nicht in der Liste "" ist und unter 45 ist füge sie zu Liste "ziehungZahlen" hinzugefügt unde der counter um 1 verringert
+        ziehung = random.randint(1, 45) # Wenn die gegebene Zahl nicht in der Liste "" ist und unter 45 ist füge sie zu Liste "ziehungZahlen" hinzugefügt unde der counter um 1 verringert
 
         if ziehung not in ziehungZahlen:
-                ziehungZahlen.append(ziehung)
-                count -= 1
+            ziehungZahlen.append(ziehung)
+            count -= 1
 
 
     return ziehungZahlen
@@ -22,8 +30,8 @@ def genNumber():
 
 def lottoZiehung():
 
-    startZeit = time.time()
-    print(startZeit)
+    startZeit = time.time() #
+
     gewinnZahlen = set(genNumber())
     count = 0
     lottoGew = {"lotto0": 0, "lotto1": 0,"lotto2": 0,"lotto3": 0,"lotto4": 0,"lotto5": 0,"lotto6": 0,}
@@ -57,6 +65,7 @@ def lottoZiehung():
             lottoGew["lotto5"] += 1
             if zeitFünf == False:
                 zeitFünf = round((time.time() - startZeit), 2)
+                break
 
 
         if correctInt == 6:
@@ -64,12 +73,8 @@ def lottoZiehung():
             if zeitSechs == False:
                 zeitSechs = round((time.time() - startZeit), 2)
 
-            break
+
     print(f"Versuche: {count}\nZeit 4er: {zeitVierer}s\nZeit 5er: {zeitFünf}s\nZeit 6er: {zeitSechs}s")
-
-
-
-
 
 
 
