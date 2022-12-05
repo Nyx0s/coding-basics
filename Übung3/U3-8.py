@@ -1,3 +1,12 @@
+"""
+
+<U3 Bsp. 1>
+<Der Computer sucht sich zufällig 6 Zahlen von 1-45 aus (gewinnzahlen) danach versucht er so lange 6 Zahlen zufällig zu generiern bis ein Lotto 4er gefunden wurde.>
+<Maximilian Jonas, 52203295>
+
+"""
+
+# import modules
 from collections import Counter
 
 

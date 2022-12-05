@@ -1,3 +1,12 @@
+"""
+
+<U3 Bsp. 2>
+<Erstellen der Eltern-Klasse Person und 2-Subklassen LehrerIn und SportlerIn. Die SportlerIn klasse bekommt eine Weitere Subklasse Skifahgrer>
+Spezialisierung haben.>
+<Maximilian Jonas, 52203295>
+
+"""
+
 class Personen():
 
     def __init__(self, name, alter):
