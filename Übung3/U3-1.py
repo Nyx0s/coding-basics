@@ -74,7 +74,7 @@ def lottoZiehung():
             lottoGew["lotto6"] += 1
             if zeitSechs == False:
                 zeitSechs = round((time.time() - startZeit), 2)
-
+                #break
     # Ausgabe der Veruche und Zeit die benötigt wird um einen Lotto 4,5,6er zu erhalten
     print(f"Versuche: {count}\nZeit 4er: {zeitVierer}s\nZeit 5er: {zeitFünf}s\nZeit 6er: {zeitSechs}s")
 
