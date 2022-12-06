@@ -64,7 +64,7 @@ def launcher():
                 question = "capital"
                 print(f"Du hast folgende einstellungen für das Spiel Gewählt:\nMindest Länge: {minLen}\nMaximale Länge: {maxLen}\nAuswahl Capital/Country: {question} ")
                 return minLen, maxLen, question
-            time.sleep(5)
+
 
             else:
                 print("Es muss co/country/ca/capital als drittes Argument gewählt werden")
@@ -75,6 +75,7 @@ def launcher():
 
     except ValueError as e:
         print(f"Es wurden Falsche argument geliefert -> {e}")
+
 
 def chooseWord(data, minLen, maxLen):
 
@@ -138,7 +139,7 @@ def game(word):
 
 def main():
     try:
-        welcome()
+        #welcome()
         getArgs = launcher()
         getData = sortData(getArgs[2])
         getWord = chooseWord(getData, getArgs[0], getArgs[1])
@@ -146,6 +147,8 @@ def main():
 
     except KeyboardInterrupt:
         print("\nDas Programm wird Beendet")
+        sys.exit(1)
+    except TypeError:
         sys.exit(1)
 
 if __name__ == '__main__':
