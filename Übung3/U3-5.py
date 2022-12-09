@@ -16,6 +16,8 @@ class Person:
         self.alter = alter
         self.plz = plz
         self.jahr = self.alter.split(".")[2]
+        self.jahr = self.calcAge()
+
 
     def calcAge(self):
         datum = int(time.localtime()[0])
@@ -30,9 +32,9 @@ p1 = Person('Alfred Maurer', '08.06.2001', 3100)
 p2 = Person('Lisa Winkler', '22.05.1992', 1100)
 p3 = Person('Ernst Hindler', '01.10.1919', 1120)
 
-p1.calcAge()
+#p1.calcAge()
 print(p1)
-p2.calcAge()
-print(p2)
-p3.calcAge()
-print(p3)
+# p2.calcAge()
+# print(p2)
+# p3.calcAge()
+# print(p3)

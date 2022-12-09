@@ -31,7 +31,7 @@ class IDCard():
 
     def bookService(self, services, extraServices=0):
 
-        match services:
+        match services: # Verwenden von match und casses hilfestellung is221004 (Lennart Putz)
             case 0:
                 if self.alter <= 18:
                     raise ValueError(f"Alter für die erwachsenen Karte überschritten")
@@ -51,6 +51,7 @@ class IDCard():
 
     def __str__(self):
         return f"Kundennummer: {self.idn}\nName: {self.name}\nGeburtstag: {self.geburtstag}\nAlter: {self.alter}\nGuthaben: {self.guthaben}"
+
 
 
 max = IDCard(1, "Max Jonas", "19.06.1997", 10.0)

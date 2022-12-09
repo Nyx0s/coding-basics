@@ -96,10 +96,6 @@ def chooseWord(data, minLen, maxLen):
 
 def game(word):
 
-    lenWord = len(word)
-    lettersUsed = []
-    placeholder = "-" * lenWord
-    guessedLetter = ""
 
     count = 10
     searchedWord = set(b for b in word)
